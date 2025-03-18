@@ -12,12 +12,31 @@
  <hr>
  <form action=""  method="GET" >
   <label for="">Username</label>
-  <input type="text" placeholder="Enter your username" name="uname">
+  <input type="text" required placeholder="Enter your username" name="uname">
   <br>
   <br>
   <label for="pass">Password</label>
-  <input type="password" placeholder="Enter your secret key" name="pass">
+  <input type="password" required placeholder="Enter your secret key" name="pass">
   <br><br>
+  <p>What is your gender?</p>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label>
+  <input type="radio"  id="female" name="gender" value="female">
+  <label for="female">Female</label>
+  <br><br>
+  <p>Tick mark your favourite countries from the list below</p>
+  <input type="checkbox" value="Pakistan" name="pakistan" id="p"> <label for="p">Pakistan</label>
+  <input type="checkbox" value="China" name="china" id="c"> <label for="c">China</label>
+  <input type="checkbox" value="Turkey" name="turkey" id="t"> <label for="t">Turkey</label>
+  <br><br>
+  <select name="courses" id="course">
+   <option value="" disabled selected>Select your trade</option>
+    <option value="web">Web Development</option>
+    <option value="app">App Development</option>
+    <option value="gd">Graphic Design</option>
+
+  </select>
+ <br><br>
   <input type="submit" value="Login">
  </form>
 </body>

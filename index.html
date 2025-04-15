@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <style>
+  #name{
+   display: none;
+  }
+ </style>
+</head>
+<body>
+
+ <h1>Welcome <span id="name"> _____</span></h1>
+ 
+ <button id="one" > Abrar </button>
+ <button id="two" > Zahid </button>
+ <button id="three" > Maria </button>
+
+ <!-- <div id="mypara">
+  This will either show or hide
+ </div> -->
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <script>
+  // $('#name').text( "Abrar" )
+  $("#one").click( function(){  
+   $("#name").text( "Abrar" );
+   $("#name").toggle();
+  })
+
+  $("#two").click( function(){  
+   $("#name").text( "Zahid" );
+   $("#name").toggle();
+  })
+
+  myText = "Maria From Variable"
+  $("#three").click( function(){  
+   $("#name").text( myText );
+   $("#name").toggle();
+  })
+ </script>
+</body>
+</html>

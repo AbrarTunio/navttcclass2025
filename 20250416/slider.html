@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Slider</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #slider {
+      width: 500px;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+      margin: auto;
+      border: 2px solid #333;
+    }
+
+    .slides {
+      display: flex;
+      width: 9999px;
+      transition: all 0.5s ease;
+      position: relative;
+    }
+
+    .slide {
+      width: 500px;
+      height: 300px;
+      flex-shrink: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      cursor: pointer;
+      color: white;
+      background: rgba(0,0,0,0.4);
+      padding: 10px;
+      z-index: 10;
+    }
+    
+    .prev { left: 10px; }
+    .next { right: 10px; }
+  </style>
+</head>
+<body>
+
+<div id="slider">
+
+  <div class="" onclick=" this.style.color = 'red' "  >This will turn green!</div>
+
+  <div class="slides">
+    <div class="slide"><img src="https://picsum.photos/seed/6565648/500" alt=""></div>
+    <div class="slide"><img src="https://picsum.photos/seed/6564648/500" alt=""></div>
+    <div class="slide"><img src="https://picsum.photos/seed/6569648/500" alt=""></div>
+  </div>
+  
+  <div class="nav prev">&#10094;</div>
+  <div class="nav next">&#10095;</div>
+</div>
+
+<script>
+$(document).ready(function(){
+  
+ 
+ 
+ 
+ let currentIndex = 0;
+  const slideWidth = $('.slide').width();
+  const totalSlides = $('.slide').length;
+
+  function goToSlide(index) {
+    $('.slides').css('transform', 'translateX(' + (-slideWidth * index) + 'px)');
+  }
+
+  $('.next').click(function() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    goToSlide(currentIndex);
+  });
+
+  $('.prev').click(function() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    goToSlide(currentIndex);
+  });
+
+  // Auto-slide every 3 seconds
+  setInterval(function() {
+    $('.next').click();
+  }, 3000);
+});
+</script>
+
+</body>
+</html>
